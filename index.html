@@ -18,7 +18,7 @@
 
         /* Заголовок */
         header {
-            padding: 80px 20px 40px;
+            padding: 60px 20px 30px;
         }
 
         h1 {
@@ -26,7 +26,7 @@
             letter-spacing: 5px;
             text-transform: uppercase;
             font-weight: 300;
-            margin-bottom: 10px;
+            margin: 0;
         }
 
         .subtitle {
@@ -34,21 +34,49 @@
             letter-spacing: 3px;
             color: #888;
             text-transform: uppercase;
+            margin-top: 10px;
         }
 
-        /* Сетка видео */
-        .video-grid {
+        /* Главное фото (Hero) */
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-height: 80vh;
+            object-fit: cover;
+            filter: grayscale(10%);
+            display: block;
+        }
+
+        /* Заголовки разделов */
+        .section-title {
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            color: #555;
+            text-transform: uppercase;
+            margin: 60px 0 30px;
+            border-bottom: 1px solid #222;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+
+        /* Сетка (для видео и фото) */
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 20px;
-            padding: 20px;
+            padding: 0 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .video-item {
             position: relative;
-            padding-bottom: 56.25%; /* Соотношение 16:9 */
+            padding-bottom: 56.25%; /* 16:9 */
             height: 0;
             overflow: hidden;
             background: #111;
@@ -63,7 +91,30 @@
             border: none;
         }
 
-        /* Футер с контактами */
+        /* Малая сетка для фотогалереи */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: brightness(0.7);
+            transition: 0.5s ease;
+        }
+
+        .photo-item img:hover {
+            filter: brightness(1);
+            transform: scale(1.02);
+        }
+
+        /* Футер и контакты */
         footer {
             padding: 100px 20px 60px;
         }
@@ -77,28 +128,27 @@
 
         .contacts a {
             color: #888;
-            font-size: 28px;
+            font-size: 26px;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: 0.3s;
         }
 
         .contacts a:hover {
             color: #fff;
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
 
         .copyright {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: #444;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        /* Адаптивность для мобильных */
+        /* Адаптивность */
         @media (max-width: 600px) {
-            .video-grid {
-                grid-template-columns: 1fr;
-            }
+            .grid { grid-template-columns: 1fr; }
+            .photo-grid { grid-template-columns: 1fr; }
             h1 { font-size: 1.8rem; }
         }
     </style>
@@ -110,23 +160,32 @@
         <p class="subtitle">Opera Director</p>
     </header>
 
-    <main class="video-grid">
-        <div class="video-item">
-            <iframe src="https://player.vimeo.com/video/ВАШ_ID_ВИДЕО_1?title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        </div>
+    <section class="hero-container">
+        <img src="02/header-3-extended-scaled.jpg" alt="Yulia Fayn" class="hero-image">
+    </section>
 
+    <div class="section-title">Selected Productions</div>
+    <main class="grid">
         <div class="video-item">
-            <iframe src="https://player.vimeo.com/video/ВАШ_ID_ВИДЕО_2?title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <iframe src="https://player.vimeo.com/video/ВАШ_ID_1?title=0&byline=0&portrait=0" allowfullscreen></iframe>
         </div>
-
         <div class="video-item">
-            <iframe src="https://player.vimeo.com/video/ВАШ_ID_ВИДЕО_3?title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        </div>
-
-        <div class="video-item">
-            <iframe src="https://player.vimeo.com/video/ВАШ_ID_ВИДЕО_4?title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <iframe src="https://player.vimeo.com/video/ВАШ_ID_2?title=0&byline=0&portrait=0" allowfullscreen></iframe>
         </div>
     </main>
+
+    <div class="section-title">Gallery</div>
+    <section class="photo-grid">
+        <div class="photo-item">
+            <img src="02/header-3-extended-1024x555.jpg" alt="Opera Production">
+        </div>
+        <div class="photo-item">
+            <img src="02/header-3-extended-768x417.jpg" alt="Opera Production">
+        </div>
+        <div class="photo-item">
+            <img src="02/header-3-extended-1536x833.jpg" alt="Opera Production">
+        </div>
+    </section>
 
     <footer>
         <div class="contacts">
