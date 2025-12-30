@@ -242,15 +242,62 @@
     </main>
 
     <div class="section-title">Gallery</div>
-<section class="photo-grid">
-        <div class="photo-item"><img src="05/PHOTO-2025-12-20-19-05-13.jpg"></div>
-        <div class="photo-item"><img src="05/PHOTO-2025-12-20-19-05-13 2.jpg"></div>
-        <div class="photo-item"><img src="05/PHOTO-2025-12-20-19-07-58.jpg"></div>
-        <div class="photo-item"><img src="05/PHOTO-2025-12-20-19-07-58 2.jpg"></div>
-        <div class="photo-item"><img src="03/PHOTO-2025-12-20-19-06-49.jpg"></div>
-        <div class="photo-item"><img src="03/PHOTO-2025-12-20-19-06-49 2.jpg"></div>
+    
+    <section class="photo-grid">
+        <div class="photo-item"><img src="03/PHOTO-2025-12-20-19-06-49.jpg" alt="Opera Production"></div>
+        <div class="photo-item"><img src="03/PHOTO-2025-12-20-19-06-49 2.jpg" alt="Opera Production"></div>
+        <div class="photo-item"><img src="03/PHOTO-2025-12-20-19-06-49 3.jpg" alt="Opera Production"></div>
     </section>
-</section>
+
+    <section class="photo-grid-2x2">
+        <div class="photo-item"><img src="05/PHOTO-2025-12-20-19-05-13.jpg" alt="Production Scene"></div>
+        <div class="photo-item"><img src="05/PHOTO-2025-12-20-19-05-13 2.jpg" alt="Production Scene"></div>
+        <div class="photo-item"><img src="05/PHOTO-2025-12-20-19-07-58.jpg" alt="Production Scene"></div>
+        <div class="photo-item"><img src="05/PHOTO-2025-12-20-19-07-58 2.jpg" alt="Production Scene"></div>
+    </section>
+
+    <style>
+        /* Сетка для первых трех фото (3 в ряд) */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto 30px;
+        }
+
+        /* Сетка для новых фото (2 в ряд) */
+        .photo-grid-2x2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: brightness(0.8);
+            transition: 0.5s;
+        }
+
+        .photo-item img:hover {
+            filter: brightness(1);
+            transform: scale(1.02);
+        }
+
+        /* Адаптивность для мобильных */
+        @media (max-width: 768px) {
+            .photo-grid, .photo-grid-2x2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
 <div class="section-title">Opera Posters</div>
     <section class="poster-grid">
         <div class="poster-item"><img src="04/1.jpg" alt="Poster 1"></div>
