@@ -190,15 +190,53 @@
             </a>
         </div>
     </section>
-    <div class="section-title">Selected Productions</div>
-    <main class="grid">
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/p6bRruWfh0Q" title="Yulia Fayn - Presentation" allowfullscreen></iframe>
+    <div class="section-title">Presentation</div>
+    <div style="max-width: 1200px; margin: 0 auto 60px; padding: 0 20px;">
+        <div class="video-item" style="padding-bottom: 56.25%;">
+            <iframe src="https://www.youtube.com/embed/p6bRruWfh0Q" title="Yulia Fayn Presentation" allowfullscreen></iframe>
         </div>
+    </div>
 
+    <div class="section-title">Selected Productions</div>
+    <main class="grid-3x2">
         <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/ZpZWeOzE27U" title="Gian Carlo Menotti - The Medium" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/ZpZWeOzE27U" title="G. Menotti - The Medium" allowfullscreen></iframe>
         </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/Bled-pxY1J8" title="The Medium - Aria" allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/kqrbjmFqBMY" title="The Medium - Toby" allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/TDunkH6aGfo" title="La clemenza di Tito" allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/ls2fNX2yE7A" title="Romeo et Juliette" allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/QQ1E29_Iq1w" title="La Traviata" allowfullscreen></iframe>
+        </div>
+    </main>
+
+    <style>
+        /* Обновленная сетка 3х2 */
+        .grid-3x2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+            gap: 20px;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+        }
+
+        @media (max-width: 900px) {
+            .grid-3x2 { grid-template-columns: repeat(2, 1fr); } /* 2 колонки на планшетах */
+        }
+        @media (max-width: 600px) {
+            .grid-3x2 { grid-template-columns: 1fr; } /* 1 колонка на телефонах */
+        }
+    </style>
     </main>
     </main>
     </main>
