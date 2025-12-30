@@ -257,46 +257,51 @@
     </section>
 
     <style>
-        /* Сетка для первых трех фото (3 в ряд) */
-        .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            padding: 0 20px;
-            max-width: 1200px;
-            margin: 0 auto 30px;
-        }
+    /* Сетка для первых трех фото (3 в ряд) */
+    .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        padding: 0 20px;
+        max-width: 1200px;
+        margin: 0 auto 30px;
+    }
 
-        /* Сетка для новых фото (2 в ряд) */
-        .photo-grid-2x2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            padding: 0 20px;
-            max-width: 1200px;
-            margin: 0 auto 60px;
-        }
+    /* Обновленная сетка для новых фото (2х2 с выравниванием) */
+    .photo-grid-2x2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 20px;
+        max-width: 1200px;
+        margin: 0 auto 60px;
+    }
 
-        .photo-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            filter: brightness(0.8);
-            transition: 0.5s;
-        }
+    /* Выравнивание размеров для фото в сетке 2х2 */
+    .photo-grid-2x2 .photo-item img {
+        width: 100%;
+        aspect-ratio: 3 / 2; /* Устанавливает единое соотношение сторон (можно сменить на 1 / 1 для квадратов) */
+        object-fit: cover;   /* Обрезает края, чтобы заполнить область без искажения пропорций лица */
+        display: block;
+        filter: brightness(0.8);
+        transition: 0.5s;
+    }
 
-        .photo-item img:hover {
-            filter: brightness(1);
-            transform: scale(1.02);
-        }
+    .photo-item img:hover {
+        filter: brightness(1);
+        transform: scale(1.02);
+    }
 
-        /* Адаптивность для мобильных */
-        @media (max-width: 768px) {
-            .photo-grid, .photo-grid-2x2 {
-                grid-template-columns: 1fr;
-            }
+    /* Адаптивность для мобильных */
+    @media (max-width: 768px) {
+        .photo-grid, .photo-grid-2x2 {
+            grid-template-columns: 1fr;
         }
-    </style>
+        .photo-grid-2x2 .photo-item img {
+            aspect-ratio: auto; /* На телефонах возвращаем естественный размер */
+        }
+    }
+</style>
 
 <div class="section-title">Opera Posters</div>
     <section class="poster-grid">
