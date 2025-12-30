@@ -214,42 +214,39 @@
     <div class="photo-item">
         <img src="03/PHOTO-2025-12-20-19-06-49 3.jpg" alt="Opera Production">
     </div>
+</section>
 <div class="section-title">Opera Posters</div>
-    
     <section class="poster-grid">
-        <div class="poster-item"><img src="04/1.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/2.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/3.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/4.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/5.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/6.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/7.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/8.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/9.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/10.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/11.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/12.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/13.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/14.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/15.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/16.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/17.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/18.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/19.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/21.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/22.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/24.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/28.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/29.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/30.jpg" alt="Poster"></div>
-        <div class="poster-item"><img src="04/31.jpg" alt="Poster"></div>
-    </section>
-
-    <section class="bottom-row">
+        <div class="poster-item"><img src="04/1.jpg" alt="Poster 1"></div>
+        <div class="poster-item"><img src="04/2.jpg" alt="Poster 2"></div>
+        <div class="poster-item"><img src="04/3.jpg" alt="Poster 3"></div>
+        <div class="poster-item"><img src="04/4.jpg" alt="Poster 4"></div>
+        <div class="poster-item"><img src="04/5.jpg" alt="Poster 5"></div>
+        <div class="poster-item"><img src="04/6.jpg" alt="Poster 6"></div>
+        <div class="poster-item"><img src="04/7.jpg" alt="Poster 7"></div>
+        <div class="poster-item"><img src="04/8.jpg" alt="Poster 8"></div>
+        <div class="poster-item"><img src="04/9.jpg" alt="Poster 9"></div>
+        <div class="poster-item"><img src="04/10.jpg" alt="Poster 10"></div>
+        <div class="poster-item"><img src="04/11.jpg" alt="Poster 11"></div>
+        <div class="poster-item"><img src="04/12.jpg" alt="Poster 12"></div>
+        <div class="poster-item"><img src="04/13.jpg" alt="Poster 13"></div>
+        <div class="poster-item"><img src="04/14.jpg" alt="Poster 14"></div>
+        <div class="poster-item"><img src="04/15.jpg" alt="Poster 15"></div>
+        <div class="poster-item"><img src="04/16.jpg" alt="Poster 16"></div>
+        <div class="poster-item"><img src="04/17.jpg" alt="Poster 17"></div>
+        <div class="poster-item"><img src="04/18.jpg" alt="Poster 18"></div>
+        <div class="poster-item"><img src="04/19.jpg" alt="Poster 19"></div>
         <div class="poster-item"><img src="04/20.jpg" alt="Poster 20"></div>
+        <div class="poster-item"><img src="04/21.jpg" alt="Poster 21"></div>
+        <div class="poster-item"><img src="04/22.jpg" alt="Poster 22"></div>
         <div class="poster-item"><img src="04/23.jpg" alt="Poster 23"></div>
+        <div class="poster-item"><img src="04/24.jpg" alt="Poster 24"></div>
         <div class="poster-item"><img src="04/25.jpg" alt="Poster 25"></div>
         <div class="poster-item"><img src="04/27.jpg" alt="Poster 27"></div>
+        <div class="poster-item"><img src="04/28.jpg" alt="Poster 28"></div>
+        <div class="poster-item"><img src="04/29.jpg" alt="Poster 29"></div>
+        <div class="poster-item"><img src="04/30.jpg" alt="Poster 30"></div>
+        <div class="poster-item"><img src="04/31.jpg" alt="Poster 31"></div>
     </section>
 
     <style>
@@ -259,29 +256,17 @@
             gap: 15px;
             padding: 0 20px;
             max-width: 1200px;
-            margin: 0 auto 15px; /* Уменьшен нижний отступ */
-        }
-        
-        /* Стиль для нижнего ряда афиш */
-        .bottom-row {
-            display: flex; /* Используем flex для гибкого распределения */
-            justify-content: space-between; /* Распределяем афиши равномерно по ряду */
-            gap: 15px;
-            max-width: 1200px;
             margin: 0 auto 60px;
-            padding: 0 20px;
         }
-
-        .bottom-row .poster-item {
-            flex: 1; /* Каждый элемент занимает равную долю */
-            max-width: calc(25% - 12px); /* Ограничиваем ширину до 1/4 ряда */
+        .poster-item img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #222;
+            transition: transform 0.3s ease;
         }
-
-        /* Адаптивность для мобильных устройств */
-        @media (max-width: 800px) {
-            .bottom-row {
-                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            }
+        .poster-item img:hover {
+            transform: scale(1.05);
+            border-color: #555;
         }
     </style>
     <footer>
