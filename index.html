@@ -245,7 +245,7 @@
         <div class="poster-item"><img src="04/31.jpg" alt="Poster"></div>
     </section>
 
-    <section class="poster-grid bottom-row">
+    <section class="bottom-row">
         <div class="poster-item"><img src="04/20.jpg" alt="Poster 20"></div>
         <div class="poster-item"><img src="04/23.jpg" alt="Poster 23"></div>
         <div class="poster-item"><img src="04/25.jpg" alt="Poster 25"></div>
@@ -262,22 +262,19 @@
             margin: 0 auto 15px; /* Уменьшен нижний отступ */
         }
         
-        /* Специальный стиль для нижнего ряда, чтобы он не растягивался на всю ширину */
+        /* Стиль для нижнего ряда афиш */
         .bottom-row {
-            justify-content: start; /* Выравнивание по левому краю */
-            grid-template-columns: repeat(4, 180px); /* Фиксируем 4 колонки по 180px */
-            margin-bottom: 60px;
+            display: flex; /* Используем flex для гибкого распределения */
+            justify-content: space-between; /* Распределяем афиши равномерно по ряду */
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
         }
 
-        .poster-item img {
-            width: 100%;
-            height: auto;
-            border: 1px solid #222;
-            transition: transform 0.3s ease;
-        }
-        .poster-item img:hover {
-            transform: scale(1.05);
-            border-color: #555;
+        .bottom-row .poster-item {
+            flex: 1; /* Каждый элемент занимает равную долю */
+            max-width: calc(25% - 12px); /* Ограничиваем ширину до 1/4 ряда */
         }
 
         /* Адаптивность для мобильных устройств */
