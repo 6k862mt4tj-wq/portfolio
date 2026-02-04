@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta property="og:title" content="Yulia Fayn">
-<meta property="og:description" content="Stage & Opera director.">
-<meta property="og:image" content="https://yuliafayn.com/02/header-3-extended-scaled.jpg">
-<meta property="og:url" content="https://yuliafayn.com">
-<meta property="og:type" content="website">
+    <meta property="og:description" content="Stage & Opera director.">
+    <meta property="og:image" content="https://yuliafayn.com/02/header-3-extended-scaled.jpg">
+    <meta property="og:url" content="https://yuliafayn.com">
+    <meta property="og:type" content="website">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yulia Fayn | Opera Director</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -69,6 +70,45 @@
             padding-bottom: 8px;
         }
 
+        /* Биография */
+        .bio-section {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            text-align: left;
+            padding: 0 20px;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        .download-btn-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border: 1px solid #555;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #111;
+            border-color: #888;
+        }
+
+        /* Презентация */
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
         /* Сетка (для видео и фото) */
         .grid {
             display: grid;
@@ -79,9 +119,19 @@
             margin: 0 auto;
         }
 
+        .grid-3x2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+        }
+
         .video-item {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
+            padding-bottom: 56.25%;
+            /* 16:9 */
             height: 0;
             overflow: hidden;
             background: #111;
@@ -96,14 +146,23 @@
             border: none;
         }
 
-        /* Малая сетка для фотогалереи */
+        /* Фотогалереи */
         .photo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 15px;
             padding: 0 20px;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 auto 30px;
+        }
+
+        .photo-grid-2x2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto 60px;
         }
 
         .photo-item img {
@@ -114,9 +173,38 @@
             transition: 0.5s ease;
         }
 
+        /* Специфично для сетки 2x2 */
+        .photo-grid-2x2 .photo-item img {
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
+            filter: brightness(0.8);
+        }
+
         .photo-item img:hover {
             filter: brightness(1);
             transform: scale(1.02);
+        }
+
+        /* Постеры */
+        .poster-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+        }
+
+        .poster-item img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #222;
+            transition: transform 0.3s ease;
+        }
+
+        .poster-item img:hover {
+            transform: scale(1.05);
+            border-color: #555;
         }
 
         /* Футер и контакты */
@@ -151,13 +239,44 @@
         }
 
         /* Адаптивность */
+        @media (max-width: 900px) {
+            .grid-3x2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .photo-grid,
+            .photo-grid-2x2 {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-grid-2x2 .photo-item img {
+                aspect-ratio: auto;
+            }
+        }
+
         @media (max-width: 600px) {
-            .grid { grid-template-columns: 1fr; }
-            .photo-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 1.8rem; }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-3x2 {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -165,197 +284,122 @@
         <p class="subtitle">Opera Director</p>
     </header>
 
-    <section class="hero-container">
-        <img src="02/header-3-extended-scaled.jpg" alt="Yulia Fayn" class="hero-image">
-    </section>
-<div class="section-title">Biography</div>
-    <section style="max-width: 800px; margin: 0 auto 60px; text-align: left; padding: 0 20px; line-height: 1.6; color: #ccc;">
-        <p>
-            Yulia Fayn is a Russian - Israeli accomplished Stage and Opera Director & Producer. 
-            She graduated from the Russian Academy of Theatre Arts (GITIS) in Moscow, 
-            specializing in Musical Theatre Direction under the mentorship of Professors G. Ansimov and D. Bertman.
-        </p>
-        <p>
-            Yulia Fayn staged a lot of performances in the opera theatres in Moscow, including S.Prokofiev “Betrothal in a monastery” (2022), W.Mozart “Cosi fan tutte” (2021), G. Donizetti “Il Campanello” (2021), P.Tchaikovsky “Iolanta” (2021), G. Menotti “The Medium” (2020), Pergolesi “La Serva-padrona” (2019). F. Zuppe "Die Schöne Galatea" (2018), W.Mozart "Le Nozze di Figaro"(2016), "Bastien and Bastienne" (2014), “Il Maestro di musica” (2011), Debussy “L’enfant prodigue” (2011), and other. 
+    <main>
+        <section class="hero-container">
+            <img src="02/header-3-extended-scaled.jpg" alt="Yulia Fayn" class="hero-image">
+        </section>
 
-        </p>
-        <p>
-            Since 2022 Yulia Fayn lives in Israel were she collaborates with the Jerusalem Opera Festival, the Ramat Gan Symphony Orchestra and The Israeli Opera in Tel Aviv. By now she have  staged in Israel G. Donizetti “L’elissir d’amore”, P.Tchaikovsky “Eugene Onegin”, V. Bellini “I Capuleti e Montecci”.
+        <div class="section-title">Biography</div>
+        <section class="bio-section">
+            <p>
+                Yulia Fayn is a Russian-Israeli accomplished Stage and Opera Director & Producer.
+                She graduated from the Russian Academy of Theatre Arts (GITIS) in Moscow,
+                specializing in Musical Theatre Direction under the mentorship of Professors G. Ansimov and D. Bertman.
+            </p>
+            <p>
+                Yulia Fayn staged a lot of performances in the opera theatres in Moscow, including S. Prokofiev
+                “Betrothal in a monastery” (2022), W. Mozart “Cosi fan tutte” (2021), G. Donizetti “Il Campanello”
+                (2021), P. Tchaikovsky “Iolanta” (2021), G. Menotti “The Medium” (2020), Pergolesi “La Serva-padrona”
+                (2019), F. Zuppe "Die Schöne Galatea" (2018), W. Mozart "Le Nozze di Figaro"(2016), "Bastien and
+                Bastienne" (2014), “Il Maestro di musica” (2011), Debussy “L’enfant prodigue” (2011), and others.
+            </p>
+            <p>
+                Since 2022, Yulia Fayn has lived in Israel where she collaborates with the Jerusalem Opera Festival, the
+                Ramat Gan Symphony Orchestra and The Israeli Opera in Tel Aviv. By now she has staged in Israel G.
+                Donizetti “L’elissir d’amore”, P. Tchaikovsky “Eugene Onegin”, V. Bellini “I Capuleti e i Montecchi”.
+            </p>
 
-        </p>
-        
-        <div style="margin-top: 30px; text-align: center;">
-            <a href="01/YF CV.pdf" target="_blank" style="display: inline-block; padding: 12px 25px; border: 1px solid #555; color: #fff; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s;">
-                Download Full CV
-            </a>
-        </div>
-    </section>
-    <div class="section-title">Presentation</div>
-    <div style="max-width: 1200px; margin: 0 auto 60px; padding: 0 20px;">
-        <div class="video-item" style="padding-bottom: 56.25%;">
-            <iframe src="https://www.youtube.com/embed/p6bRruWfh0Q" title="Yulia Fayn Presentation" allowfullscreen></iframe>
-        </div>
-    </div>
+            <div class="download-btn-container">
+                <a href="01/YF CV.pdf" target="_blank" class="download-btn">
+                    Download Full CV
+                </a>
+            </div>
+        </section>
 
-    <div class="section-title">Selected Productions</div>
-    <main class="grid-3x2">
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/ZpZWeOzE27U" title="G. Menotti - The Medium" allowfullscreen></iframe>
+        <div class="section-title">Presentation</div>
+        <div class="presentation-container">
+            <div class="video-item" style="padding-bottom: 56.25%;">
+                <iframe src="https://www.youtube.com/embed/p6bRruWfh0Q" title="Yulia Fayn Presentation"
+                    allowfullscreen></iframe>
+            </div>
         </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/Bled-pxY1J8" title="The Medium - Aria" allowfullscreen></iframe>
+
+        <div class="section-title">Selected Productions</div>
+        <div class="grid-3x2">
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/ZpZWeOzE27U" title="G. Menotti - The Medium"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/Bled-pxY1J8" title="The Medium - Aria"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/kqrbjmFqBMY" title="The Medium - Toby"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/TDunkH6aGfo" title="La clemenza di Tito"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/ls2fNX2yE7A" title="Romeo et Juliette"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/QQ1E29_Iq1w" title="La Traviata" allowfullscreen></iframe>
+            </div>
         </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/kqrbjmFqBMY" title="The Medium - Toby" allowfullscreen></iframe>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/TDunkH6aGfo" title="La clemenza di Tito" allowfullscreen></iframe>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/ls2fNX2yE7A" title="Romeo et Juliette" allowfullscreen></iframe>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/QQ1E29_Iq1w" title="La Traviata" allowfullscreen></iframe>
-        </div>
+
+        <div class="section-title">Gallery</div>
+
+        <section class="photo-grid">
+            <div class="photo-item"><img src="03/PHOTO-2025-12-20-19-06-49.jpg" alt="Opera Production"></div>
+            <div class="photo-item"><img src="03/PHOTO-2025-12-20-19-06-49 2.jpg" alt="Opera Production"></div>
+            <div class="photo-item"><img src="03/PHOTO-2025-12-20-19-06-49 3.jpg" alt="Opera Production"></div>
+        </section>
+
+        <section class="photo-grid-2x2">
+            <div class="photo-item"><img src="05/PHOTO-2025-12-20-19-05-13.jpg" alt="Production Scene"></div>
+            <div class="photo-item"><img src="05/PHOTO-2025-12-20-19-05-13 2.jpg" alt="Production Scene"></div>
+            <div class="photo-item"><img src="05/PHOTO-2025-12-20-19-07-58.jpg" alt="Production Scene"></div>
+            <div class="photo-item"><img src="05/PHOTO-2025-12-20-19-07-58 2.jpg" alt="Production Scene"></div>
+        </section>
+
+        <div class="section-title">Opera Posters</div>
+        <section class="poster-grid">
+            <div class="poster-item"><img src="04/1.jpg" alt="Poster 1"></div>
+            <div class="poster-item"><img src="04/2.jpg" alt="Poster 2"></div>
+            <div class="poster-item"><img src="04/3.jpg" alt="Poster 3"></div>
+            <div class="poster-item"><img src="04/4.jpg" alt="Poster 4"></div>
+            <div class="poster-item"><img src="04/5.jpg" alt="Poster 5"></div>
+            <div class="poster-item"><img src="04/6.jpg" alt="Poster 6"></div>
+            <div class="poster-item"><img src="04/7.jpg" alt="Poster 7"></div>
+            <div class="poster-item"><img src="04/8.jpg" alt="Poster 8"></div>
+            <div class="poster-item"><img src="04/9.jpg" alt="Poster 9"></div>
+            <div class="poster-item"><img src="04/10.jpg" alt="Poster 10"></div>
+            <div class="poster-item"><img src="04/11.jpg" alt="Poster 11"></div>
+            <div class="poster-item"><img src="04/12.jpg" alt="Poster 12"></div>
+            <div class="poster-item"><img src="04/13.jpg" alt="Poster 13"></div>
+            <div class="poster-item"><img src="04/14.jpg" alt="Poster 14"></div>
+            <div class="poster-item"><img src="04/15.jpg" alt="Poster 15"></div>
+            <div class="poster-item"><img src="04/16.jpg" alt="Poster 16"></div>
+            <div class="poster-item"><img src="04/17.jpg" alt="Poster 17"></div>
+            <div class="poster-item"><img src="04/18.jpg" alt="Poster 18"></div>
+            <div class="poster-item"><img src="04/19.jpg" alt="Poster 19"></div>
+            <div class="poster-item"><img src="04/20.jpg" alt="Poster 20"></div>
+            <div class="poster-item"><img src="04/21.jpg" alt="Poster 21"></div>
+            <div class="poster-item"><img src="04/22.jpg" alt="Poster 22"></div>
+            <div class="poster-item"><img src="04/23.jpg" alt="Poster 23"></div>
+            <div class="poster-item"><img src="04/24.jpg" alt="Poster 24"></div>
+            <div class="poster-item"><img src="04/25.jpg" alt="Poster 25"></div>
+            <div class="poster-item"><img src="04/27.jpg" alt="Poster 27"></div>
+            <div class="poster-item"><img src="04/28.jpg" alt="Poster 28"></div>
+            <div class="poster-item"><img src="04/29.jpg" alt="Poster 29"></div>
+        </section>
+
     </main>
 
-    <style>
-        /* Обновленная сетка 3х2 */
-        .grid-3x2 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 колонки */
-            gap: 20px;
-            padding: 0 20px;
-            max-width: 1200px;
-            margin: 0 auto 60px;
-        }
-
-        @media (max-width: 900px) {
-            .grid-3x2 { grid-template-columns: repeat(2, 1fr); } /* 2 колонки на планшетах */
-        }
-        @media (max-width: 600px) {
-            .grid-3x2 { grid-template-columns: 1fr; } /* 1 колонка на телефонах */
-        }
-    </style>
-    </main>
-    </main>
-    </main>
-
-    <div class="section-title">Gallery</div>
-    
-    <section class="photo-grid">
-        <div class="photo-item"><img src="03/PHOTO-2025-12-20-19-06-49.jpg" alt="Opera Production"></div>
-        <div class="photo-item"><img src="03/PHOTO-2025-12-20-19-06-49 2.jpg" alt="Opera Production"></div>
-        <div class="photo-item"><img src="03/PHOTO-2025-12-20-19-06-49 3.jpg" alt="Opera Production"></div>
-    </section>
-
-    <section class="photo-grid-2x2">
-        <div class="photo-item"><img src="05/PHOTO-2025-12-20-19-05-13.jpg" alt="Production Scene"></div>
-        <div class="photo-item"><img src="05/PHOTO-2025-12-20-19-05-13 2.jpg" alt="Production Scene"></div>
-        <div class="photo-item"><img src="05/PHOTO-2025-12-20-19-07-58.jpg" alt="Production Scene"></div>
-        <div class="photo-item"><img src="05/PHOTO-2025-12-20-19-07-58 2.jpg" alt="Production Scene"></div>
-    </section>
-
-    <style>
-    /* Сетка для первых трех фото (3 в ряд) */
-    .photo-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-        padding: 0 20px;
-        max-width: 1200px;
-        margin: 0 auto 30px;
-    }
-
-    /* Обновленная сетка для новых фото (2х2 с выравниванием) */
-    .photo-grid-2x2 {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        padding: 0 20px;
-        max-width: 1200px;
-        margin: 0 auto 60px;
-    }
-
-    /* Выравнивание размеров для фото в сетке 2х2 */
-    .photo-grid-2x2 .photo-item img {
-        width: 100%;
-        aspect-ratio: 3 / 2; /* Устанавливает единое соотношение сторон (можно сменить на 1 / 1 для квадратов) */
-        object-fit: cover;   /* Обрезает края, чтобы заполнить область без искажения пропорций лица */
-        display: block;
-        filter: brightness(0.8);
-        transition: 0.5s;
-    }
-
-    .photo-item img:hover {
-        filter: brightness(1);
-        transform: scale(1.02);
-    }
-
-    /* Адаптивность для мобильных */
-    @media (max-width: 768px) {
-        .photo-grid, .photo-grid-2x2 {
-            grid-template-columns: 1fr;
-        }
-        .photo-grid-2x2 .photo-item img {
-            aspect-ratio: auto; /* На телефонах возвращаем естественный размер */
-        }
-    }
-</style>
-
-<div class="section-title">Opera Posters</div>
-    <section class="poster-grid">
-        <div class="poster-item"><img src="04/1.jpg" alt="Poster 1"></div>
-        <div class="poster-item"><img src="04/2.jpg" alt="Poster 2"></div>
-        <div class="poster-item"><img src="04/3.jpg" alt="Poster 3"></div>
-        <div class="poster-item"><img src="04/4.jpg" alt="Poster 4"></div>
-        <div class="poster-item"><img src="04/5.jpg" alt="Poster 5"></div>
-        <div class="poster-item"><img src="04/6.jpg" alt="Poster 6"></div>
-        <div class="poster-item"><img src="04/7.jpg" alt="Poster 7"></div>
-        <div class="poster-item"><img src="04/8.jpg" alt="Poster 8"></div>
-        <div class="poster-item"><img src="04/9.jpg" alt="Poster 9"></div>
-        <div class="poster-item"><img src="04/10.jpg" alt="Poster 10"></div>
-        <div class="poster-item"><img src="04/11.jpg" alt="Poster 11"></div>
-        <div class="poster-item"><img src="04/12.jpg" alt="Poster 12"></div>
-        <div class="poster-item"><img src="04/13.jpg" alt="Poster 13"></div>
-        <div class="poster-item"><img src="04/14.jpg" alt="Poster 14"></div>
-        <div class="poster-item"><img src="04/15.jpg" alt="Poster 15"></div>
-        <div class="poster-item"><img src="04/16.jpg" alt="Poster 16"></div>
-        <div class="poster-item"><img src="04/17.jpg" alt="Poster 17"></div>
-        <div class="poster-item"><img src="04/18.jpg" alt="Poster 18"></div>
-        <div class="poster-item"><img src="04/19.jpg" alt="Poster 19"></div>
-        <div class="poster-item"><img src="04/20.jpg" alt="Poster 20"></div>
-        <div class="poster-item"><img src="04/21.jpg" alt="Poster 21"></div>
-        <div class="poster-item"><img src="04/22.jpg" alt="Poster 22"></div>
-        <div class="poster-item"><img src="04/23.jpg" alt="Poster 23"></div>
-        <div class="poster-item"><img src="04/24.jpg" alt="Poster 24"></div>
-        <div class="poster-item"><img src="04/25.jpg" alt="Poster 25"></div>
-        <div class="poster-item"><img src="04/27.jpg" alt="Poster 27"></div>
-        <div class="poster-item"><img src="04/28.jpg" alt="Poster 28"></div>
-        <div class="poster-item"><img src="04/29.jpg" alt="Poster 29"></div>
-
-    </section>
-
-    <style>
-        .poster-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 15px;
-            padding: 0 20px;
-            max-width: 1200px;
-            margin: 0 auto 60px;
-        }
-        .poster-item img {
-            width: 100%;
-            height: auto;
-            border: 1px solid #222;
-            transition: transform 0.3s ease;
-        }
-        .poster-item img:hover {
-            transform: scale(1.05);
-            border-color: #555;
-        }
-    </style>
     <footer>
         <div class="contacts">
             <a href="mailto:ju.fain77@gmail.com" title="Email">
@@ -375,4 +419,5 @@
     </footer>
 
 </body>
+
 </html>
